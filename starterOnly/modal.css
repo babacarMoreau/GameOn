@@ -441,7 +441,7 @@ input[data-error]::after {
   white-space: nowrap;
 }
 .hero-text {
-  width: 146%;
+  width: 90%;         
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
@@ -499,7 +499,7 @@ footer {
     white-space: normal;
   }
   .hero-text {
-    width: unset;
+    /* width: unset; */
     font-size: 1.5rem;
   }
   .hero-img img {
