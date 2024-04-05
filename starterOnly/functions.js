@@ -3,6 +3,8 @@ function verifPrenomNom(string){
 
   const regex = new RegExp("[a-zA-z]+");
 
+  console.log(regex.test(string));
+
   if(string.length >=2 && regex.test(string) && string != "") return true;
   else return false;
 
@@ -22,7 +24,7 @@ function verifEmail(string){
 
 function verifNombre(nbconcours){
 
- 
+ // parseInt pour gerer le cas ou il y a 'rien' ou des'espaces'
   if(!isNaN(parseInt(nbconcours))) return true;
   else return false;
 
@@ -32,11 +34,12 @@ function verifNombre(nbconcours){
 // validation du formulaire
 function validate(){
 
-  if(validNom && validPrenom && validEmail && validQuantity && validVille && validConditions) {
+  if(validNom && validPrenom && validEmail && validQuantity && validVille && validConditions && validDate) {
     console.log('ok');
     return true;
    } else {
 
+    console.log('erreur champs')
     return false;
    }
   

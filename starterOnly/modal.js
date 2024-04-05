@@ -9,7 +9,7 @@ function editNav() {
 
 // variables
 
-var validNom, validPrenom, validEmail, validQuantity, validVille = false;
+var validNom, validPrenom, validEmail, validQuantity, validVille, validDate = false;
 var validConditions = true;
 
 
@@ -19,7 +19,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const spanClose = document.querySelector('.close');
 const listInput = document.querySelectorAll(".formData input");
-const form = document.getElementsByName('form');
+//const form = document.getElementsByName('form');
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -65,6 +65,10 @@ spanClose.addEventListener('click', () =>{
         console.log(i);
         validEmail = verifEmail(event.target.value);
         console.log(validEmail);
+
+      } else if(event.target.id == 'birthdate'){
+
+          validDate= true;
 
       } else if(event.target.id == 'quantity'){
 
