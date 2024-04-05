@@ -17,3 +17,28 @@ function verifEmail(string){
     else return false;
 
 }
+
+// Verification que le nombre de concours est numérique
+
+function verifNombre(nbconcours){
+
+ 
+  if(!isNaN(parseInt(nbconcours))) return true;
+  else return false;
+
+}
+
+
+// validation du formulaire
+function validate(){
+
+  if(validNom && validPrenom && validEmail && validQuantity && validVille && validConditions) {
+    console.log('ok');
+    return true;
+   } else {
+
+    return false;
+   }
+  
+
+}
