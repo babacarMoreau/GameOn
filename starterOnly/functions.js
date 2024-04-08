@@ -35,7 +35,7 @@ function verifDateNaissance(date){
 function verifNombre(nbconcours){
 
  // parseInt pour gerer le cas ou il y a 'rien' ou des'espaces'
-  if(!isNaN(parseInt(nbconcours))) return true;
+  if(!isNaN(parseInt(nbconcours)) && nbconcours <= 99) return true;
   else return false;
 
 }
@@ -122,6 +122,66 @@ function messageDerreurEmail(){
 
 }
 
+//Affichage erreur pour le nombre de concours
+
+function messageDerreurNbConcours(nbConcours){
+
+  const msgErreur = document.getElementById("quantityError");
+
+  msgErreur.style.color = 'red';
+  msgErreur.style.fontSize = "small";
+
+  if(nbConcours > 99 || nbConcours == ""){
+
+    msgErreur.innerHTML = "Veuillez entrez un nombre compris entre 0 et 99";
+    msgErreur.style.display = 'block';
+
+  } else {
+
+    msgErreur.style.display = 'none';
+  }
+
+}
+
+// Affichage erreur selection option radiobutton
+
+function messageDerreurOption(){
+
+  const msgErreur = document.getElementById("villeError");
+  msgErreur.style.color = 'red';
+  msgErreur.style.fontSize = "small";
+
+  if(!validVille){
+
+    msgErreur.innerHTML = "Veuillez selectionner une ville";
+    msgErreur.style.display = 'block';
+
+  } else {
+
+    msgErreur.style.display = 'none';
+
+  }
+  
+}
+
+//Affichage erreur conditions d'utilisation
+
+function messageDerreurConditions(){
+
+  const msgErreur = document.getElementById("conditionsError");
+  msgErreur.style.color = 'red';
+  msgErreur.style.fontSize = "small";
+
+  if(!validConditions){
+    msgErreur.innerHTML = "Veuillez acceptez les conditions d'utilisations";
+    msgErreur.style.display = 'block';
+    
+  } else {
+
+    msgErreur.style.display = 'none';
+  }
+
+}
 
 // validation du formulaire
 function validate(){
@@ -131,6 +191,8 @@ function validate(){
     return true;
    } else {
 
+    messageDerreurOption();
+    messageDerreurConditions();
     console.log('erreur champs');
     return false;
    }

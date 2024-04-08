@@ -73,18 +73,19 @@ spanClose.addEventListener('click', () =>{
 
       } else if(event.target.id == 'birthdate'){
 
+          console.log(event.target.value);
           validDate= true;
 
       } else if(event.target.id == 'quantity'){
 
         validQuantity = verifNombre(event.target.value);
-        console.log(validQuantity);
+        messageDerreurNbConcours(event.target.value);
 
 
       } else if (event.target.checked && (i <= 10 && i >=5 )){
 
           validVille = true;
-          console.log(validVille);
+          messageDerreurOption();
 
       } else if (i == 11){
 
@@ -99,7 +100,7 @@ spanClose.addEventListener('click', () =>{
             console.log(validConditions);
 
          }
-
+         messageDerreurConditions();
 
       }
 
