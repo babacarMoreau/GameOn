@@ -12,6 +12,8 @@ function editNav() {
 var validNom, validPrenom, validEmail, validQuantity, validVille, validDate = false;
 var validConditions = true;
 
+var longueur;
+
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
@@ -51,20 +53,23 @@ spanClose.addEventListener('click', () =>{
 
       if(event.target.id == 'first'){
 
-          console.log(i);
+          
           validPrenom = verifPrenomNom(event.target.value);
           console.log(validPrenom);
+          messageDerreurPrenom();
 
       } else if (event.target.id == 'last'){
 
           validNom = verifPrenomNom(event.target.value);
           console.log(validNom);
+          messageDerreurNom();
 
       } else if(event.target.id == 'email'){
 
-        console.log(i);
+       
         validEmail = verifEmail(event.target.value);
         console.log(validEmail);
+        messageDerreurEmail();
 
       } else if(event.target.id == 'birthdate'){
 
