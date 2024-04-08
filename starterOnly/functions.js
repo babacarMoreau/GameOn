@@ -25,7 +25,10 @@ function verifEmail(string){
 
 function verifDateNaissance(date){
 
-  const regex = new RegExp("")
+   const tabdate = date.split('-');
+   
+   if(tabdate[0] >= 1924 && tabdate[0] <= 2015) return true;
+   else return false;
 
 
 }
@@ -182,6 +185,21 @@ function messageDerreurConditions(){
   }
 
 }
+
+//Affichage erreur date de naissance
+
+  function messageDerreurDateNaissance(){
+
+    const msgErreur = document.getElementById("dateError");
+    msgErreur.style.color = 'red';
+    msgErreur.style.fontSize = "small";
+
+    if(!validDate){
+
+     //tester si la personne a au moins 11 ans pour participer au concours
+     // creer un objet date pour recuperer lannee
+
+  }
 
 // validation du formulaire
 function validate(){

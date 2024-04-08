@@ -73,8 +73,8 @@ spanClose.addEventListener('click', () =>{
 
       } else if(event.target.id == 'birthdate'){
 
-          console.log(event.target.value);
-          validDate= true;
+          validDate = verifDateNaissance(event.target.value);
+          console.log(validDate);
 
       } else if(event.target.id == 'quantity'){
 
