@@ -14,6 +14,8 @@ var validConditions = true;
 
 var longueur;
 
+//var validSubmit = false;
+
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
@@ -21,7 +23,10 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const spanClose = document.querySelector('.close');
 const listInput = document.querySelectorAll(".formData input");
-//const form = document.getElementsByName('form');
+const form = document.getElementsByTagName('form');
+const btnSubmit = document.querySelector('.btn-submit');
+const labelTournoi = document.querySelector('.text-label');
+const divMsgConfirmation = document.getElementById('msgConfirmation')
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -75,6 +80,7 @@ spanClose.addEventListener('click', () =>{
 
           validDate = verifDateNaissance(event.target.value);
           console.log(validDate);
+          messageDerreurDateNaissance();
 
       } else if(event.target.id == 'quantity'){
 
@@ -107,5 +113,42 @@ spanClose.addEventListener('click', () =>{
     });
   
   }
+
+
+  form[0].addEventListener('submit', (event)=>{
+
+      event.preventDefault();
+
+      if(1){
+
+        form[0].submit();
+
+        for (const element of formData) {
+
+          element.style.display = 'none';
+        }
+
+        labelTournoi.style.display = 'none';
+        btnSubmit.value = "Fermer"
+        divMsgConfirmation.style.width = '402px';
+        divMsgConfirmation.style.height = '625px';
+        divMsgConfirmation.style.display = 'flex';
+        divMsgConfirmation.style.justifyContent = 'center';
+        divMsgConfirmation.style.alignItems = 'center';
+        divMsgConfirmation.innerHTML ="Merci pour votre inscription"
+        
+      } else{
+
+        messageDerreurOption();
+        messageDerreurConditions();
+        messageDerreurDateNaissance();
+        messageDerreurPrenom();
+        messageDerreurNom();
+        messageDerreurEmail();
+
+      }
+
+      
+  });
 
 

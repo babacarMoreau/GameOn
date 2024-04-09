@@ -53,7 +53,7 @@ function messageDerreurPrenom(){
   msgErreur.style.fontSize = "small";
  
 
-  if(longeur < 2){
+  if(longueur < 2){
 
       msgErreur.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prenom.";
       msgErreur.style.display = 'block';
@@ -82,7 +82,7 @@ function messageDerreurNom(){
  
  
 
-  if(longeur < 2){
+  if(longueur < 2){
 
       
       msgErreur.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
@@ -196,12 +196,15 @@ function messageDerreurConditions(){
 
     if(!validDate){
 
-     //tester si la personne a au moins 11 ans pour participer au concours
-     // creer un objet date pour recuperer lannee
-
+      msgErreur.innerHTML = "Veuillez entrer une date valide";
+      msgErreur.style.display = 'block';
+  } else {
+    msgErreur.style.display = 'none';
   }
+}
 
 // validation du formulaire
+/*
 function validate(){
 
   if(validNom && validPrenom && validEmail && validQuantity && validVille && validConditions && validDate) {
@@ -211,9 +214,14 @@ function validate(){
 
     messageDerreurOption();
     messageDerreurConditions();
+    messageDerreurDateNaissance();
+    messageDerreurPrenom();
+    messageDerreurNom();
+    messageDerreurEmail();
     console.log('erreur champs');
+    
     return false;
    }
   
 
-}
+} */
