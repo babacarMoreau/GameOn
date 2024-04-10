@@ -27,7 +27,7 @@ function verifDateNaissance(date){
 
    const tabdate = date.split('-');
    
-   if(tabdate[0] >= 1924 && tabdate[0] <= 2015) return true;
+   if(tabdate[0] >= 1924 && tabdate[0] <= 2011) return true;
    else return false;
 
 
@@ -204,12 +204,37 @@ function messageDerreurConditions(){
 }
 
 // validation du formulaire
-/*
+
 function validate(){
 
   if(validNom && validPrenom && validEmail && validQuantity && validVille && validConditions && validDate) {
     console.log('ok');
+
+    for (const element of formData) {
+
+      element.style.display = 'none';
+    }
+
+    labelTournoi.style.display = 'none';
+    btnSubmit.value = "Fermer"
+    divMsgConfirmation.style.width = '402px';
+    divMsgConfirmation.style.height = '625px';
+    divMsgConfirmation.style.display = 'flex';
+    divMsgConfirmation.style.justifyContent = 'center';
+    divMsgConfirmation.style.alignItems = 'center';
+    divMsgConfirmation.innerHTML ="Merci pour votre inscription"
+
+    btnSubmit.type = "button";
+
+    btnSubmit.addEventListener('click', ()=>{
+
+      modalbg.style.display = 'none';
+      location.reload();
+
+    });
+
     return true;
+
    } else {
 
     messageDerreurOption();
@@ -224,4 +249,4 @@ function validate(){
    }
   
 
-} */
+} 

@@ -14,7 +14,6 @@ var validConditions = true;
 
 var longueur;
 
-//var validSubmit = false;
 
 
 // DOM Elements
@@ -114,41 +113,14 @@ spanClose.addEventListener('click', () =>{
   
   }
 
-
+ // Stopper le comportement normal du 'submit' pour permettre l'affichage de la page de remerciements
   form[0].addEventListener('submit', (event)=>{
 
       event.preventDefault();
-
-      if(1){
-
-        form[0].submit();
-
-        for (const element of formData) {
-
-          element.style.display = 'none';
-        }
-
-        labelTournoi.style.display = 'none';
-        btnSubmit.value = "Fermer"
-        divMsgConfirmation.style.width = '402px';
-        divMsgConfirmation.style.height = '625px';
-        divMsgConfirmation.style.display = 'flex';
-        divMsgConfirmation.style.justifyContent = 'center';
-        divMsgConfirmation.style.alignItems = 'center';
-        divMsgConfirmation.innerHTML ="Merci pour votre inscription"
-        
-      } else{
-
-        messageDerreurOption();
-        messageDerreurConditions();
-        messageDerreurDateNaissance();
-        messageDerreurPrenom();
-        messageDerreurNom();
-        messageDerreurEmail();
-
-      }
-
       
+
   });
+
+
 
 
