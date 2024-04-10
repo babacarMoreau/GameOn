@@ -518,7 +518,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 820px) {
+@media screen and (min-width: 800px) {
 
     .hero-section {
 
@@ -552,6 +552,30 @@ footer {
   }
 
 }
+
+@media (min-width:770px) and (max-width:823px) {
+
+
+  .main-navbar span{
+
+    font-size: 1.1rem;
+
+  }
+
+
+  
+}
+
+@media (min-width:801px) and (max-width:944px) {
+
+    .hero-headline{
+
+      font-size: 4.8rem;
+    }
+
+}
+
+
 
 @keyframes modalopen {
   from {
