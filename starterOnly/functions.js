@@ -203,35 +203,42 @@ function messageDerreurConditions(){
   }
 }
 
+//Configuration Modal Remerciements
+
+function AffichageModalRemerciements(){
+
+  for (const element of formData) {
+
+    element.style.display = 'none';
+  }
+
+  labelTournoi.style.display = 'none';
+  btnSubmit.value = "Fermer"
+  divMsgConfirmation.style.height = '625px';
+  divMsgConfirmation.style.display = 'flex';
+  divMsgConfirmation.style.justifyContent = 'center';
+  divMsgConfirmation.style.alignItems = 'center';
+  divMsgConfirmation.innerHTML ="Merci pour votre inscription"
+
+  btnSubmit.type = "button";  // changement du type de bouton pour effectuer la fermeture de la Modal avec l'évenement
+
+  //close Modal
+  btnSubmit.addEventListener('click', ()=>{
+    
+    modalbg.style.display = 'none';
+    location.reload();
+
+  });
+
+}
+
 // validation du formulaire
 
 function validate(){
 
   if(validNom && validPrenom && validEmail && validQuantity && validVille && validConditions && validDate) {
-    console.log('ok');
 
-    for (const element of formData) {
-
-      element.style.display = 'none';
-    }
-
-    labelTournoi.style.display = 'none';
-    btnSubmit.value = "Fermer"
-    divMsgConfirmation.style.width = '402px';
-    divMsgConfirmation.style.height = '625px';
-    divMsgConfirmation.style.display = 'flex';
-    divMsgConfirmation.style.justifyContent = 'center';
-    divMsgConfirmation.style.alignItems = 'center';
-    divMsgConfirmation.innerHTML ="Merci pour votre inscription"
-
-    btnSubmit.type = "button";
-
-    btnSubmit.addEventListener('click', ()=>{
-
-      modalbg.style.display = 'none';
-      location.reload();
-
-    });
+    AffichageModalRemerciements();
 
     return true;
 
@@ -243,8 +250,7 @@ function validate(){
     messageDerreurPrenom();
     messageDerreurNom();
     messageDerreurEmail();
-    console.log('erreur champs');
-    
+
     return false;
    }
   

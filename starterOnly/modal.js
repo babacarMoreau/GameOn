@@ -59,26 +59,22 @@ spanClose.addEventListener('click', () =>{
 
           
           validPrenom = verifPrenomNom(event.target.value);
-          console.log(validPrenom);
           messageDerreurPrenom();
 
       } else if (event.target.id == 'last'){
 
           validNom = verifPrenomNom(event.target.value);
-          console.log(validNom);
           messageDerreurNom();
 
       } else if(event.target.id == 'email'){
 
        
         validEmail = verifEmail(event.target.value);
-        console.log(validEmail);
         messageDerreurEmail();
 
       } else if(event.target.id == 'birthdate'){
 
           validDate = verifDateNaissance(event.target.value);
-          console.log(validDate);
           messageDerreurDateNaissance();
 
       } else if(event.target.id == 'quantity'){
@@ -97,12 +93,10 @@ spanClose.addEventListener('click', () =>{
             if(event.target.checked){
 
               validConditions = true;
-              console.log(validConditions);
 
           } else{
 
             validConditions = false;
-            console.log(validConditions);
 
          }
          messageDerreurConditions();
