@@ -4,7 +4,7 @@
 function verifPrenomNom(string){
 
   const regex = new RegExp("^[a-zA-Z-]{2,}$");
-  longeur = string.length;
+  longueur = string.length;
 
   if(string.length >=2 && regex.test(string) && string != "") return true;
   else return false;
@@ -55,6 +55,7 @@ function messageDerreurPrenom(){
 
   if(longueur < 2){
 
+      console.log('ok');
       msgErreur.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prenom.";
       msgErreur.style.display = 'block';
       
@@ -134,7 +135,7 @@ function messageDerreurNbConcours(nbConcours){
   msgErreur.style.color = 'red';
   msgErreur.style.fontSize = "small";
 
-  if(nbConcours > 99 || nbConcours == ""){
+  if(nbConcours > 99 || nbConcours == "" || !validQuantity){
 
     msgErreur.innerHTML = "Veuillez entrez un nombre compris entre 0 et 99";
     msgErreur.style.display = 'block';
@@ -250,6 +251,7 @@ function validate(){
     messageDerreurPrenom();
     messageDerreurNom();
     messageDerreurEmail();
+    messageDerreurNbConcours();
 
     return false;
    }
