@@ -227,7 +227,6 @@ function AffichageModalRemerciements(){
   btnSubmit.addEventListener('click', ()=>{
     
     modalbg.style.display = 'none';
-    location.reload();
 
   });
 

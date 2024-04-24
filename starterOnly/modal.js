@@ -42,7 +42,6 @@ function launchModal() {
 spanClose.addEventListener('click', () =>{
 
  modalbg.style.display = 'none';
- location.reload();
  
 });
 
